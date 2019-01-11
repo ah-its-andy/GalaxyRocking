@@ -6,18 +6,18 @@ using System.Text;
 
 namespace GalaxyRocking.Expressions
 {
-    public class ExpressionCompiler : IExpressionCompiler
+    public class SymbolScriptEngine : ISymbolScriptEngine
     {
         private readonly ISymbolMappingService _symbolMappingService;
         private readonly IEnumerable<ISymbolResolver> _symbolResolvers;
 
-        public ExpressionCompiler(ISymbolMappingService symbolMappingService, IEnumerable<ISymbolResolver> symbolResolvers)
+        public SymbolScriptEngine(ISymbolMappingService symbolMappingService, IEnumerable<ISymbolResolver> symbolResolvers)
         {
             _symbolMappingService = symbolMappingService ?? throw new ArgumentNullException(nameof(symbolMappingService));
             _symbolResolvers = symbolResolvers ?? throw new ArgumentNullException(nameof(symbolResolvers));
         }
 
-        public GalaxyExpression Compile(string expressionString)
+        public GalaxyExpression Interpret(string expressionString)
         {
             var constExprs = expressionString.ToCharArray()
                 .Select(x => new ConstantExpression(x, _symbolMappingService.GetDigitBySymbol(x)))

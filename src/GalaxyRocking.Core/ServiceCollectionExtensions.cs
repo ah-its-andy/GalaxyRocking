@@ -14,7 +14,7 @@ namespace GalaxyRocking
             configure?.Invoke(options);
             services.AddSingleton(options);
             services.AddScoped<ISymbolMappingService, SymbolMappingService>();
-            services.AddScoped<IExpressionCompiler, ExpressionCompiler>();
+            services.AddScoped<ISymbolScriptEngine, SymbolScriptEngine>();
             services.AddScoped<ISymbolResolver, AddititionRepeatedResolver>();
             services.AddScoped<ISymbolResolver, ConstantRepeatResolver>();
             services.AddScoped<ISymbolResolver, ConstantSubtractResolver>();
