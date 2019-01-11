@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GalaxyRocking.Core", "src\GalaxyRocking.Core\GalaxyRocking.Core.csproj", "{909177D6-EE59-4070-A078-D7DB87C5BB53}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2097F9AD-2A08-4217-AF28-3329323046AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GalaxyRocking.ConsoleApp", "src\GalaxyRocking.ConsoleApp\GalaxyRocking.ConsoleApp.csproj", "{631DD035-97D0-4ED6-B923-3982E9B4F690}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{909177D6-EE59-4070-A078-D7DB87C5BB53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{909177D6-EE59-4070-A078-D7DB87C5BB53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{909177D6-EE59-4070-A078-D7DB87C5BB53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{909177D6-EE59-4070-A078-D7DB87C5BB53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{631DD035-97D0-4ED6-B923-3982E9B4F690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{631DD035-97D0-4ED6-B923-3982E9B4F690}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{631DD035-97D0-4ED6-B923-3982E9B4F690}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{631DD035-97D0-4ED6-B923-3982E9B4F690}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{909177D6-EE59-4070-A078-D7DB87C5BB53} = {2097F9AD-2A08-4217-AF28-3329323046AE}
+		{631DD035-97D0-4ED6-B923-3982E9B4F690} = {2097F9AD-2A08-4217-AF28-3329323046AE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D25A9651-191A-4BC4-8C59-B3B04B0C6063}
+	EndGlobalSection
+EndGlobal
