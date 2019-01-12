@@ -29,7 +29,7 @@ namespace GalaxyRocking.Expressions
             for (int i = 0; i < constExprs.Count; i++)
             {
                 if (i + 1 == constExprs.Count) continue;
-                var current = constExprs[i];
+                var current = FindCurrent(constExprs, i);
                 var next = constExprs[i + 1];
                 var resolver = FindResolver(current, next);
                 if (resolver == null) continue;
@@ -45,6 +45,14 @@ namespace GalaxyRocking.Expressions
         private ISymbolResolver FindResolver(Expression left, Expression right)
         {
             return _symbolResolvers.FirstOrDefault(x => x.CanResolve(left, right));
+        }
+
+        private Expression FindCurrent(List<Expression> source, int index)
+        {
+            if (index < 0) return null;
+            var current = source[index];
+            if (current != null) return current;
+            return FindCurrent(source, index - 1);
         }
     }
 }
