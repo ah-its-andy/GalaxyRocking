@@ -2,9 +2,12 @@
 
 namespace GalaxyRocking.Expressions
 {
+    /// <summary>
+    /// 重复表达式，表示N个连续重复的字符
+    /// </summary>
     public class RepeatedExpression : ArithmeticExpression
     {
-        public RepeatedExpression(ConstantExpression left, ConstantExpression right)
+        public RepeatedExpression(SymbolExpression left, SymbolExpression right)
         {
             if (left == null) throw new ArgumentNullException(nameof(left));
             if (right == null) throw new ArgumentNullException(nameof(right));
@@ -14,6 +17,9 @@ namespace GalaxyRocking.Expressions
             RepeatTimes = 2;
         }
 
+        /// <summary>
+        /// 重复的次数
+        /// </summary>
         public uint RepeatTimes { get; private set; }
 
         public override ArithmeticExpression Left { get; }
@@ -22,11 +28,11 @@ namespace GalaxyRocking.Expressions
 
         public override ArithmeticTypes ArithmeticType => ArithmeticTypes.Multiplication;
 
-        public RepeatedExpression Add(ConstantExpression value)
+        public RepeatedExpression Add(SymbolExpression value)
         {            
             if (RepeatTimes == 3) throw new ArgumentOutOfRangeException("RepeatTimes");
             if (value == null) throw new ArgumentNullException(nameof(value));
-            if (value.Symbol != ((ConstantExpression)Left).Symbol) throw new ArgumentOutOfRangeException();
+            if (value.Symbol != ((SymbolExpression)Left).Symbol) throw new ArgumentOutOfRangeException();
             RepeatTimes++;
             return this;
         }
