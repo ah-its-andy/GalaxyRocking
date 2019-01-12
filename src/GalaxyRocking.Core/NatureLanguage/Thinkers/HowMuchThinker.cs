@@ -33,8 +33,7 @@ namespace GalaxyRocking.NatureLanguage.Thinkers
                 var symbolAmount = dialectScriptEngine.Interpret(amount);
                 var symbolScriptEngine = provider.GetRequiredService<ISymbolScriptEngine>();
                 var digitAmountExpr = symbolScriptEngine.Interpret(symbolAmount);
-                ConsolePrinter.PrintVerbose($"罗马字表达式： {digitAmountExpr.ToString("S")}");
-                ConsolePrinter.PrintVerbose($"十进制表达式： {digitAmountExpr.ToString("N")}");
+                
                 var compiledDelegate = digitAmountExpr.Compile();
 
                 ConsolePrinter.PrintResult($"{amount} is {compiledDelegate.DynamicInvoke()}");

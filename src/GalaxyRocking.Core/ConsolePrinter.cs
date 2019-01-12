@@ -7,7 +7,7 @@ namespace GalaxyRocking
         public static bool Verbose { get; set; } = false;
 
         public static void PrintResult(string text) =>
-            Console.WriteLine($"Result: {text}");
+            Console.WriteLine($"{text}");
 
         public static void PrintVerbose(string text)
         {

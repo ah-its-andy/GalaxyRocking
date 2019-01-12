@@ -28,7 +28,18 @@ namespace GalaxyRocking.Expressions
         /// 将表达式编译成一个可执行的委托类型
         /// </summary>
         /// <returns></returns>
-        public Delegate Compile() => GetDelegate((ArithmeticExpression)Body);
+        public Delegate Compile()
+        {
+            var executable = GetDelegate((ArithmeticExpression)Body);
+            return new Func<uint>(() =>
+            {
+                var result = executable();
+                ConsolePrinter.PrintVerbose($"罗马字表达式： {ToString("S")}");
+                ConsolePrinter.PrintVerbose($"十进制表达式： {ToString("N")}");
+                ConsolePrinter.PrintVerbose($"最终计算结果： {result}");
+                return result;
+            });
+        }
 
         /// <summary>
         /// 递归生成委托类型
@@ -112,9 +123,7 @@ namespace GalaxyRocking.Expressions
             return string.Join("+", strs.Where(x => !string.IsNullOrEmpty(x)));
         }
 
-        /// <summary>
-        /// 获取一个字符串形式的表达式
-        /// </summary>
+
         private string GetDigitString(ArithmeticExpression expression)
         {
             var strs = new List<string>();
