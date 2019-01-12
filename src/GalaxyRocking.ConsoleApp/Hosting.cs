@@ -21,12 +21,18 @@ namespace GalaxyRocking.ConsoleApp
 
         public void Run(string[] args)
         {
-            if(args.Length > 0)
+            if(args.Length == 0)
             {
-                InputFromFile(args[0]);
+                WaitingForInput();
             }
 
-            WaitingForInput();
+            if (args.Contains("-v")) ConsolePrinter.Verbose = true;
+            if(args.Any(x=> x != "-v"))
+            {
+                var filename = args.First(x => x != "-v");
+                InputFromFile(filename);
+            }
+            
         }
 
         public void WaitingForInput()
