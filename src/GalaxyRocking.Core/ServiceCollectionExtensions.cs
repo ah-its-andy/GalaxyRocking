@@ -1,5 +1,6 @@
 ﻿using GalaxyRocking.Expressions;
 using GalaxyRocking.Expressions.SymbolResolvers;
+using GalaxyRocking.Language.Dialect;
 using GalaxyRocking.Symbol;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -18,6 +19,9 @@ namespace GalaxyRocking
             services.AddScoped<ISymbolResolver, AddititionRepeatedResolver>();
             services.AddScoped<ISymbolResolver, ConstantRepeatResolver>();
             services.AddScoped<ISymbolResolver, ConstantSubtractResolver>();
+            services.AddScoped<IDialectAnalyzer, DialectAnalyzer>();
+            services.AddScoped<IDialectScriptEngine, DialectScriptEngine>();
+            services.AddScoped<IDialectCompiler, DialectCompiler>();
             return services;
         }
     }
