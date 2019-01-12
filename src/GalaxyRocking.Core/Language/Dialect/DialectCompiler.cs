@@ -52,7 +52,7 @@ namespace GalaxyRocking.Language.Dialect
                         provider.GetRequiredService<GalaxyRockingOptions>()
                             .UnitConvertOptions
                             .UnitConvertDescriptors.Add(
-                                new UnitConvert.UnitConvertDescriptor((uint)digitAmount, unitName, creditsAmount));
+                                new UnitConvertDescriptor((uint)digitAmount, unitName, creditsAmount));
                         Console.WriteLine($"{digitAmount} {unitName} = {creditsAmount} Credits");
                         return null;
                     });
