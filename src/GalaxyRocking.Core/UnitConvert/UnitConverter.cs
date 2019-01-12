@@ -16,17 +16,36 @@ namespace GalaxyRocking.UnitConvert
 
         public uint Convert(uint amount, string sourceUnit, string targetUnit)
         {
-            var unitDescriptor
+            var sourceUnitDescriptor
                 = _galaxyRockingOptions
                     .UnitConvertOptions.UnitConvertDescriptors
                       .FirstOrDefault(x => x.UnitName == sourceUnit);
-            if(unitDescriptor == null)
+            if(sourceUnitDescriptor == null)
             {
                 ConsolePrinter.PrintResult($"Unit {sourceUnit} was unsupported.");
                 return 0;
             }
-            var singleUnit = (double)unitDescriptor.CreaditAmount / unitDescriptor.UnitAmount;
-            return System.Convert.ToUInt32(Math.Round(amount * singleUnit));
+            var singleUnit = (double)sourceUnitDescriptor.CreaditAmount / sourceUnitDescriptor.UnitAmount;
+            var credits = amount * singleUnit;
+            if(targetUnit == "Credits")
+                return System.Convert.ToUInt32(Math.Round(credits));
+
+            var targetUnitDescriptor
+                = _galaxyRockingOptions
+                    .UnitConvertOptions.UnitConvertDescriptors
+                      .FirstOrDefault(x => x.UnitName == targetUnit);
+
+            if (targetUnitDescriptor == null)
+            {
+                ConsolePrinter.PrintResult($"Unit {targetUnit} was unsupported.");
+                return 0;
+            }
+
+            singleUnit = 0;
+            singleUnit = (double)targetUnitDescriptor.UnitAmount / targetUnitDescriptor.CreaditAmount;
+            var targetAmount = singleUnit * credits;
+            return System.Convert.ToUInt32(Math.Round(targetAmount));
+
         }
     }
 }
