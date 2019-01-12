@@ -24,7 +24,6 @@ namespace GalaxyRocking
             services.AddScoped<ISymbolResolver, ConstantSubtractResolver>();
             services.AddScoped<IDialectAnalyzer, DialectAnalyzer>();
             services.AddScoped<IDialectScriptEngine, DialectScriptEngine>();
-            services.AddScoped<IDialectCompiler, DialectCompiler>();
 
             services.AddScoped<INatureLanguageAnalyzer, NatureLanguageAnalyzer>();
             services.AddScoped<IThinker, DialectDeclareThinker>();

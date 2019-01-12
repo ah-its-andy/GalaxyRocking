@@ -9,10 +9,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2097F9AD-2A0
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GalaxyRocking.ConsoleApp", "src\GalaxyRocking.ConsoleApp\GalaxyRocking.ConsoleApp.csproj", "{631DD035-97D0-4ED6-B923-3982E9B4F690}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{9D9F5F5C-5ACD-4784-BC3B-A7F22F1F07CF}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTestProject1", "XUnitTestProject1\XUnitTestProject1.csproj", "{9B1E2E0E-8DDF-4EFA-8D6F-A16D15911232}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,10 +23,6 @@ Global
 		{631DD035-97D0-4ED6-B923-3982E9B4F690}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{631DD035-97D0-4ED6-B923-3982E9B4F690}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{631DD035-97D0-4ED6-B923-3982E9B4F690}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9B1E2E0E-8DDF-4EFA-8D6F-A16D15911232}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9B1E2E0E-8DDF-4EFA-8D6F-A16D15911232}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9B1E2E0E-8DDF-4EFA-8D6F-A16D15911232}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9B1E2E0E-8DDF-4EFA-8D6F-A16D15911232}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -38,7 +30,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{909177D6-EE59-4070-A078-D7DB87C5BB53} = {2097F9AD-2A08-4217-AF28-3329323046AE}
 		{631DD035-97D0-4ED6-B923-3982E9B4F690} = {2097F9AD-2A08-4217-AF28-3329323046AE}
-		{9B1E2E0E-8DDF-4EFA-8D6F-A16D15911232} = {9D9F5F5C-5ACD-4784-BC3B-A7F22F1F07CF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D25A9651-191A-4BC4-8C59-B3B04B0C6063}
