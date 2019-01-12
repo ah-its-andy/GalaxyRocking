@@ -4,6 +4,9 @@ using System;
 
 namespace GalaxyRocking.NatureLanguage.Thinkers
 {
+    /// <summary>
+    /// 方言定义处理
+    /// </summary>
     public class DialectDeclareThinker : IThinker
     {
         public bool CanThink(Sentence sentence)
@@ -12,7 +15,7 @@ namespace GalaxyRocking.NatureLanguage.Thinkers
                 && sentence.Words.Count == 3
                 && sentence.Words[0].FeatureType == FeatureTypes.Text
                 && sentence.Words[1].FeatureType == FeatureTypes.Beverb
-                && sentence.Words[2].FeatureType == FeatureTypes.RomanSymbol;
+                && sentence.Words[2].FeatureType == FeatureTypes.ScriptSymbol;
         }
 
         public Delegate Think(Sentence sentence)

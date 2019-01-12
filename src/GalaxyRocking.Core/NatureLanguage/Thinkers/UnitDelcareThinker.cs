@@ -3,12 +3,13 @@ using GalaxyRocking.Language.Dialect;
 using GalaxyRocking.UnitConvert;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace GalaxyRocking.NatureLanguage.Thinkers
 {
+    /// <summary>
+    /// 单位定义处理
+    /// </summary>
     public class UnitDelcareThinker : IThinker
     {
         public bool CanThink(Sentence sentence)

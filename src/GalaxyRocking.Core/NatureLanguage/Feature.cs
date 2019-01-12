@@ -3,6 +3,9 @@ using System.Text.RegularExpressions;
 
 namespace GalaxyRocking.NatureLanguage
 {
+    /// <summary>
+    /// 自言语言特性
+    /// </summary>
     public class Feature
     {
         public Feature(string regularString, FeatureTypes type)

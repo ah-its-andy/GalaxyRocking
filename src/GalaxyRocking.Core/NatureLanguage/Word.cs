@@ -2,6 +2,9 @@
 
 namespace GalaxyRocking.NatureLanguage
 {
+    /// <summary>
+    /// 字词
+    /// </summary>
     public class Word
     {
         public Word(FeatureTypes featureType, string body)

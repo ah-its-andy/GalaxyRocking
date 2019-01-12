@@ -7,10 +7,10 @@ namespace GalaxyRocking.Language.Dialect
     {
         public List<DialectFeature> Syntaxes { get; set; } = new List<DialectFeature>
         {
-            new DialectFeature("glob", false, SyntaxTypes.Keyword),
-            new DialectFeature("prok", false, SyntaxTypes.Keyword),
-            new DialectFeature("pish", false, SyntaxTypes.Keyword),
-            new DialectFeature("tegj", false, SyntaxTypes.Keyword),
+            //new DialectFeature("glob", false, SyntaxTypes.Keyword),
+            //new DialectFeature("prok", false, SyntaxTypes.Keyword),
+            //new DialectFeature("pish", false, SyntaxTypes.Keyword),
+            //new DialectFeature("tegj", false, SyntaxTypes.Keyword),
             //new DialectFeature("Silver", false, SyntaxTypes.Unit),
             //new DialectFeature("Gold", false, SyntaxTypes.Unit),
             //new DialectFeature("Iron", false, SyntaxTypes.Unit),
@@ -23,10 +23,10 @@ namespace GalaxyRocking.Language.Dialect
 
         public Dictionary<char, string> Mapping { get; set; } = new Dictionary<char, string>
         {
-            [Symbols.I]="glob",
-            [Symbols.V]="prok",
-            [Symbols.X]="pish",
-            [Symbols.L]="tegj"
+            //[Symbols.I]="glob",
+            //[Symbols.V]="prok",
+            //[Symbols.X]="pish",
+            //[Symbols.L]="tegj"
         };
     }
 }

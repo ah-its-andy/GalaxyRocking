@@ -2,12 +2,13 @@
 using GalaxyRocking.Language.Dialect;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace GalaxyRocking.NatureLanguage.Thinkers
 {
+    /// <summary>
+    /// 字符脚本解释处理
+    /// </summary>
     public class HowMuchThinker : IThinker
     {
         public bool CanThink(Sentence sentence)

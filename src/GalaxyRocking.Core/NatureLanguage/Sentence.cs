@@ -4,6 +4,9 @@ using System.Linq;
 
 namespace GalaxyRocking.NatureLanguage
 {
+    /// <summary>
+    /// 句子
+    /// </summary>
     public class Sentence
     {
         public Sentence(List<Word> words)

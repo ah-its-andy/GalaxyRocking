@@ -16,13 +16,13 @@ namespace GalaxyRocking.NatureLanguage
             new Feature("(^is$)", FeatureTypes.Beverb),
             new Feature("(^\\?$)", FeatureTypes.Symbol),
             new Feature("(^\\d+$)", FeatureTypes.Digit),
-            new Feature("(^C$)", FeatureTypes.RomanSymbol),
-            new Feature("(^I$)", FeatureTypes.RomanSymbol),
-            new Feature("(^V$)", FeatureTypes.RomanSymbol),
-            new Feature("(^X$)", FeatureTypes.RomanSymbol),
-            new Feature("(^L$)", FeatureTypes.RomanSymbol),
-            new Feature("(^D$)", FeatureTypes.RomanSymbol),
-            new Feature("(^M$)", FeatureTypes.RomanSymbol),
+            new Feature("(^C$)", FeatureTypes.ScriptSymbol),
+            new Feature("(^I$)", FeatureTypes.ScriptSymbol),
+            new Feature("(^V$)", FeatureTypes.ScriptSymbol),
+            new Feature("(^X$)", FeatureTypes.ScriptSymbol),
+            new Feature("(^L$)", FeatureTypes.ScriptSymbol),
+            new Feature("(^D$)", FeatureTypes.ScriptSymbol),
+            new Feature("(^M$)", FeatureTypes.ScriptSymbol),
         };
     }
 }

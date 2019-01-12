@@ -1,10 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace GalaxyRocking.UnitConvert
 {
+    /// <summary>
+    /// 单位转换器
+    /// </summary>
     public class UnitConverter : IUnitConverter
     {
         private readonly GalaxyRockingOptions _galaxyRockingOptions;
@@ -25,7 +26,7 @@ namespace GalaxyRocking.UnitConvert
                 ConsolePrinter.PrintResult($"Unit {sourceUnit} was unsupported.");
                 return 0;
             }
-            var singleUnit = (double)sourceUnitDescriptor.CreaditAmount / sourceUnitDescriptor.UnitAmount;
+            var singleUnit = (double)sourceUnitDescriptor.CreditAmount / sourceUnitDescriptor.UnitAmount;
             var credits = amount * singleUnit;
             if(targetUnit == "Credits")
                 return System.Convert.ToUInt32(Math.Round(credits));
@@ -42,7 +43,7 @@ namespace GalaxyRocking.UnitConvert
             }
 
             singleUnit = 0;
-            singleUnit = (double)targetUnitDescriptor.UnitAmount / targetUnitDescriptor.CreaditAmount;
+            singleUnit = (double)targetUnitDescriptor.UnitAmount / targetUnitDescriptor.CreditAmount;
             var targetAmount = singleUnit * credits;
             return System.Convert.ToUInt32(Math.Round(targetAmount));
 

@@ -5,6 +5,9 @@ using System.Text.RegularExpressions;
 
 namespace GalaxyRocking.Language.Dialect
 {
+    /// <summary>
+    /// 方言分析器
+    /// </summary>
     public class DialectAnalyzer : IDialectAnalyzer
     {
         private readonly GalaxyRockingOptions _galaxyRockingOptions;
@@ -14,6 +17,11 @@ namespace GalaxyRocking.Language.Dialect
             _galaxyRockingOptions = galaxyRockingOptions ?? throw new ArgumentNullException(nameof(galaxyRockingOptions));
         }
 
+        /// <summary>
+        /// 将方言分析称语法集合
+        /// </summary>
+        /// <param name="script"></param>
+        /// <returns></returns>
         public List<Syntax> Analyze(string script)
         {
             return script.Split(' ')

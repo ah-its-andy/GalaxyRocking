@@ -3,12 +3,13 @@ using GalaxyRocking.Language.Dialect;
 using GalaxyRocking.UnitConvert;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace GalaxyRocking.NatureLanguage.Thinkers
 {
+    /// <summary>
+    /// 货币单位转换处理
+    /// </summary>
     public class HowManyThinker : IThinker
     {
         public bool CanThink(Sentence sentence)

@@ -3,6 +3,9 @@ using System.Linq;
 
 namespace GalaxyRocking.Language.Dialect
 {
+    /// <summary>
+    /// 方言解释引擎
+    /// </summary>
     public class DialectScriptEngine : IDialectScriptEngine
     {
         private readonly GalaxyRockingOptions _galaxyRockingOptions;
@@ -14,6 +17,11 @@ namespace GalaxyRocking.Language.Dialect
             _dialectAnalyzer = dialectAnalyzer ?? throw new ArgumentNullException(nameof(dialectAnalyzer));
         }
 
+        /// <summary>
+        /// 将方言解释为字符脚本
+        /// </summary>
+        /// <param name="script">方言</param>
+        /// <returns>字符脚本</returns>
         public string Interpret(string script)
         {
             var syntaxes = _dialectAnalyzer.Analyze(script);

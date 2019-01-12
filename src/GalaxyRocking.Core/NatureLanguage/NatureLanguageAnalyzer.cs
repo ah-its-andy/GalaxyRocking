@@ -3,6 +3,9 @@ using System.Linq;
 
 namespace GalaxyRocking.NatureLanguage
 {
+    /// <summary>
+    /// 自然语言分析器
+    /// </summary>
     public class NatureLanguageAnalyzer : INatureLanguageAnalyzer
     {
         private readonly GalaxyRockingOptions _galaxyRockingOptions;
