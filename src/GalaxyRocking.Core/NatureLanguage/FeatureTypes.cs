@@ -10,6 +10,7 @@
         Unit = 40,
         Symbol = 50,
         RomanSymbol = 55,
-        Text = 60
+        Text = 60,
+        Quantifier = 70
     }
 }

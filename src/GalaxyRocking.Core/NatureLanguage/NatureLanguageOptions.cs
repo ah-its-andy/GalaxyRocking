@@ -6,8 +6,9 @@ namespace GalaxyRocking.NatureLanguage
     {
         public List<Feature> Features { get; } = new List<Feature>()
         {
-            new Feature("(^how\\smuch$)", FeatureTypes.Adverb),
-            new Feature("(^how\\smany$)", FeatureTypes.Adverb),
+            new Feature("(^how$)", FeatureTypes.Adverb),
+            new Feature("(^many$)", FeatureTypes.Quantifier),
+            new Feature("(^much$)", FeatureTypes.Quantifier),
             new Feature("(^Credits$)", FeatureTypes.Unit),
             new Feature("(^Silver$)", FeatureTypes.Unit),
             new Feature("(^Gold$)", FeatureTypes.Unit),

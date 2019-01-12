@@ -4,6 +4,7 @@ using GalaxyRocking.Language.Dialect;
 using GalaxyRocking.NatureLanguage;
 using GalaxyRocking.NatureLanguage.Thinkers;
 using GalaxyRocking.Symbol;
+using GalaxyRocking.UnitConvert;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 
@@ -28,6 +29,10 @@ namespace GalaxyRocking
             services.AddScoped<INatureLanguageAnalyzer, NatureLanguageAnalyzer>();
             services.AddScoped<IThinker, DialectDeclareThinker>();
             services.AddScoped<IThinker, UnitDelcareThinker>();
+            services.AddScoped<IThinker, HowMuchThinker>();
+            services.AddScoped<IThinker, HowManyThinker>();
+
+            services.AddScoped<IUnitConverter, UnitConverter>();
 
             return services;
         }

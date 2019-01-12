@@ -12,18 +12,11 @@ namespace GalaxyRocking.ConsoleApp
     public class Hosting
     {
         private readonly IServiceProvider _serviceProvider;
-        private readonly ISymbolScriptEngine _symbolScriptEngine;
-        private readonly IDialectCompiler _dialectCompiler;
-        private readonly INatureLanguageAnalyzer _natureLanguageAnalyzer;
-        private readonly IEnumerable<IThinker> _thinkers;
+
 
         public Hosting(IServiceProvider serviceProvider)
         {
-            _serviceProvider = serviceProvider ?? throw new ArgumentNullException(nameof(serviceProvider));
-            _symbolScriptEngine = _serviceProvider.GetRequiredService<ISymbolScriptEngine>();
-            _dialectCompiler = _serviceProvider.GetRequiredService<IDialectCompiler>();
-            _natureLanguageAnalyzer = _serviceProvider.GetRequiredService<INatureLanguageAnalyzer>();
-            _thinkers = _serviceProvider.GetServices<IThinker>();
+            _serviceProvider = serviceProvider ?? throw new ArgumentNullException(nameof(serviceProvider));           
         }
 
         public void Run(string[] args)
@@ -82,15 +75,22 @@ namespace GalaxyRocking.ConsoleApp
 
         public void HandleInput(string input)
         {
-            var sentence = _natureLanguageAnalyzer.Analyze(input);
-            var thinker = _thinkers.FirstOrDefault(x => x.CanThink(sentence));
-            if(thinker == null)
+            using(var scope = _serviceProvider.CreateScope())
             {
-                Console.WriteLine("I have no idea what you are talking about");
-                return;
-            }
+                var natureLanguageAnalyzer = scope.ServiceProvider.GetRequiredService<INatureLanguageAnalyzer>();
+                var thinkers = scope.ServiceProvider.GetServices<IThinker>();
 
-            thinker.Think(sentence).DynamicInvoke(_serviceProvider);
+                var sentence = natureLanguageAnalyzer.Analyze(input);
+                var thinker = thinkers.FirstOrDefault(x => x.CanThink(sentence));
+                if (thinker == null)
+                {
+                    Console.WriteLine("I have no idea what you are talking about");
+                    return;
+                }
+
+                thinker.Think(sentence).DynamicInvoke(_serviceProvider);
+            }
+            
         }
     }
 }
